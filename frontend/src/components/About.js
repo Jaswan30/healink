@@ -47,11 +47,11 @@ function About() {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((p) => (p + 1) % images.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, [images.length]);
+  const interval = setInterval(() => {
+    setCurrentIndex((p) => (p + 1) % images.length);
+  }, 4000);
+  return () => clearInterval(interval);
+}, [images.length]);
 
   return (
     <section
