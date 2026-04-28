@@ -52,7 +52,7 @@ function About() {
   }, 4000);
   return () => clearInterval(interval);
 }, [images.length]);
-
+console.log("NEW BUILD TEST");
   return (
     <section
       id="about-section"
@@ -114,6 +114,7 @@ function About() {
           everyone. Our mission is to ensure that every individual gets the care
           they need with trust and convenience.
         </p>
+        
       </div>
 
       {/* ===== Counter Section (FIX) ===== */}
