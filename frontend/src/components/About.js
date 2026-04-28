@@ -51,7 +51,7 @@ function About() {
       setCurrentIndex((p) => (p + 1) % images.length);
     }, 4000);
     return () => clearInterval(interval);
-  }, );
+  }, [images.length]);
 
   return (
     <section
@@ -80,7 +80,7 @@ function About() {
         />
       </div>
 
-      {/* ===== Text Section (ONLY TEXT) ===== */}
+      {/* Text Section */}
       <div
         style={{
           background: "rgba(255,255,255,0.95)",
@@ -116,7 +116,22 @@ function About() {
         </p>
       </div>
 
-      
+      {/* ===== Counter Section (FIX) ===== */}
+      <div
+        style={{
+          display: "flex",
+          gap: 20,
+          padding: "20px 30px 30px",
+          justifyContent: "space-around",
+          flexWrap: "wrap",
+          background: "#f5f9ff",
+        }}
+      >
+        <Counter end={500} label="Patients Helped" icon="🧑‍⚕️" />
+        <Counter end={120} label="Doctors" icon="🩺" />
+        <Counter end={50} label="Hospitals" icon="🏥" />
+        <Counter end={24} label="Support Hours" icon="⏰" />
+      </div>
     </section>
   );
 }
