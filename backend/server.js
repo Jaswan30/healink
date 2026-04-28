@@ -15,12 +15,13 @@ const profileRoutes = require("./routes/profileRoutes"); // ⬅️ NEW
 const app = express(); // ✅ MOVED ABOVE (IMPORTANT)
 
 const orderRoutes = require("./routes/orderRoutes");
-
 app.use("/api/orders", orderRoutes);
 
 const subscriptionRoutes = require("./routes/subscriptionRoutes");
-
 app.use("/api/subscription", subscriptionRoutes);
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`Server running on ${PORT}`));
 
 // ✅ Allow both Frontend & Admin origins via CORS
 const allowedOrigins = [
@@ -47,6 +48,14 @@ app.use(express.json());
 
 // ➕ Serve uploaded avatars
 app.use("/uploads", express.static("uploads")); // ⬅️ NEW
+app.use(cors({
+  origin: [
+    "http://localhost:3000",
+    "https://your-frontend-url.vercel.app",
+    "https://your-admin-url.vercel.app"
+  ],
+  credentials: true
+}));
 
 // ✅ Routes
 app.use("/api/auth", authRoutes);
