@@ -1,0 +1,25 @@
+.admin-dashboard {
+  background: linear-gradient(to top, #80cafc, #ffffff);
+  padding: 50px;
+  text-align: center;
+  min-height: 100vh;
+}
+
+table {
+  margin: 20px auto;
+  width: 80%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+th, td {
+  padding: 12px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background-color: #ff7a00;
+  color: white;
+}

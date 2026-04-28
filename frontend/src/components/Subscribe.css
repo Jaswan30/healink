@@ -1,0 +1,160 @@
+/* PAGE BACKGROUND */
+.subscribe-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #e3f2fd, #f5faff);
+  padding: 20px;
+}
+
+/* MAIN CARD */
+.subscribe-container {
+  width: 100%;
+  max-width: 850px;
+  padding: 35px;
+  border-radius: 20px;
+  backdrop-filter: blur(12px);
+  background: rgba(255, 255, 255, 0.75);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  transition: transform 0.3s ease;
+}
+
+.subscribe-container:hover {
+  transform: translateY(-5px);
+}
+
+/* TITLE */
+.subscribe-container h2 {
+  text-align: center;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #1a2b4b;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* more control */
+  gap: 16px;
+}
+
+/* Control each field width manually */
+.form-grid .hospital {
+  grid-column: span 2;
+}
+
+.form-grid .type {
+  grid-column: span 1;
+}
+
+.form-grid .name {
+  grid-column: span 2;
+}
+
+.form-grid .specialty {
+  grid-column: span 2;
+}
+
+.form-grid .price {
+  grid-column: span 1;
+}
+
+.form-grid .location {
+  grid-column: span 2;
+}
+
+/* Inputs */
+.form-grid input,
+.form-grid select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid #dbe3ec;
+  font-size: 14px;
+  background: #f9fbff;
+  transition: all 0.25s ease;
+}
+
+/* BUTTON */
+.subscribe-btn {
+  margin-top: 25px;
+  width: 100%;
+  padding: 15px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* BUTTON HOVER */
+.subscribe-btn:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 15px 30px rgba(0, 123, 255, 0.35);
+}
+
+/* BUTTON CLICK EFFECT */
+.subscribe-btn:active {
+  transform: scale(0.98);
+}
+
+/* SHINE ANIMATION */
+.subscribe-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.4),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.subscribe-btn:hover::after {
+  left: 100%;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  position: absolute;
+  left: 30px;
+  top: 30px;
+  padding: 10px 18px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.3);
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .subscribe-container {
+    padding: 25px;
+  }
+}

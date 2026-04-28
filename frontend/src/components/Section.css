@@ -1,0 +1,31 @@
+.section-card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 220px;
+  text-align: center;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin: 15px;
+}
+
+.section-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.section-card .icon {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.section-card h3 {
+  color: #007bff;
+  margin-bottom: 8px;
+}
+
+.section-card p {
+  color: #4e7a97;
+  font-size: 14px;
+}

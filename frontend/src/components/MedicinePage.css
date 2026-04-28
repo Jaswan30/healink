@@ -1,0 +1,329 @@
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.medicine-page {
+  background: linear-gradient(to top, #80cafc, #ffffff);
+  color: rgb(234, 13, 13);
+  padding: 50px 20px;
+  text-align: center;
+  min-height: 100vh;
+}
+
+/* === Top Section === */
+.hero-section h2 {
+  font-size: 1.9rem;
+  margin-bottom: 25px;
+}
+
+.highlight {
+  color: #00a5f7;
+  font-weight: bold;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.feature-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px 25px;
+  border-radius: 12px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ===== Search (MATCH BLOODBANK) ===== */
+/* ===== Search (MATCH CONSULTANCY) ===== */
+.search-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.search-box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.search-box input {
+  padding: 10px 15px;
+  width: 60%;
+  max-width: 450px;
+  border-radius: 8px;
+  border: 1.5px solid #ddd;
+  outline: none;
+  font-size: 15px;
+}
+
+.search-box input:focus {
+  border-color: #ff6600;
+  box-shadow: 0 0 5px rgba(255, 102, 0, 0.3);
+}
+
+.search-box button {
+  padding: 10px 18px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background-color: #e05500;
+  transform: scale(1.03);
+}
+
+/* Suggestions */
+.suggestions {
+  position: absolute;
+  top: 43px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 62%;
+  max-width: 480px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 999;
+  max-height: 180px;
+  overflow-y: auto;
+}
+
+
+/* Scrollbar — orange like BloodBank */
+.suggestions::-webkit-scrollbar {
+  width: 6px;
+}
+.suggestions::-webkit-scrollbar-thumb {
+  background-color: #ff7a00;
+  border-radius: 4px;
+}
+.suggestions::-webkit-scrollbar-thumb:hover {
+  background-color: #ff9933;
+}
+
+.suggestions li {
+  padding: 12px 15px;
+  border-bottom: 1px solid #f1f1f1;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: #222;
+}
+
+.suggestions li:hover {
+  background: #f9f9f9;
+}
+
+.view-all {
+  text-align: center;
+  font-weight: 600;
+  color: #007bff;
+  padding: 12px;
+  background-color: #fafafa;
+  border-top: 1px solid #ddd;
+  cursor: pointer;
+}
+.view-all:hover {
+  background-color: #f0f7ff;
+}
+
+/* === Offers === */
+.offers {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 25px;
+  flex-wrap: wrap;
+}
+
+.offer-box {
+  flex: 1;
+  padding: 20px;
+  border-radius: 12px;
+  background: #f5f5f5;
+  border-left: 5px solid teal;
+  min-width: 260px;
+}
+
+.app-offer {
+  border-left-color: #1e90ff;
+}
+
+.web-offer {
+  border-left-color: #ff6f61;
+}
+
+.install-btn,
+.coupon-btn {
+  margin-top: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: teal;
+  color: white;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.coupon-btn {
+  background-color: #ff6f61;
+}
+
+/* === Search Results === */
+.results {
+  background: white;
+  color: black;
+  width: 85%;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: left;
+}
+
+.result-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.result-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px 20px;
+  background: #fafafa;
+}
+
+.result-card .off {
+  color: red;
+  font-weight: 600;
+}
+
+.add-btn {
+  background-color: teal;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #007272;
+}
+
+/* === Prescription === */
+.prescription {
+  margin-top: 30px;
+  padding: 15px 25px;
+  border-left: 5px solid orange;
+  background: #fff3e0;
+  border-radius: 8px;
+}
+
+.prescription h4 {
+  margin-bottom: 10px;
+}
+
+.prescription ul {
+  margin: 10px 0 0 20px;
+  line-height: 1.8;
+}
+
+/* small fade used by suggestions if needed */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===============================
+   MEDICINE ACTION BUTTONS
+=============================== */
+
+/* Common button base */
+/* ===============================
+   MEDICINE ACTION BUTTON LAYOUT
+=============================== */
+
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+/* Equal width buttons */
+.add-btn,
+.wishlist-btn {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+}
+
+/* 🛒 Add to Cart */
+.add-btn {
+  background: linear-gradient(135deg, #007bff, #00b4ff);
+  color: #fff;
+  box-shadow: 0 6px 16px rgba(0, 123, 255, 0.35);
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 123, 255, 0.45);
+}
+
+/* ❤️ Wishlist */
+.wishlist-btn {
+  background: #ffffff;
+  color: #e60023;
+  border: 1px solid rgba(230, 0, 35, 0.35);
+}
+
+.wishlist-btn:hover {
+  background: #ffecef;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(230, 0, 35, 0.25);
+}
+
+/* 📱 Mobile: stack buttons */
+@media (max-width: 600px) {
+  .action-buttons {
+    flex-direction: column;
+  }
+}

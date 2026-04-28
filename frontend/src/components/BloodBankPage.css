@@ -1,0 +1,209 @@
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.bloodbank-container {
+  text-align: center;
+  padding: 60px 10%;
+  background: linear-gradient(to top, #80cafc, #ffffff);
+  min-height: 100vh;
+}
+
+.bloodbank-container h2 {
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+.bloodbank-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.bloodbank-card {
+  padding: 25px;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.bloodbank-card:hover {
+  transform: translateY(-8px);
+}
+
+.available {
+  border-left: 6px solid #00c851;
+}
+
+.not-available {
+  border-left: 6px solid #ff4444;
+}
+
+.status {
+  display: inline-block;
+  margin-top: 12px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Search Section */
+/* ===== Search (MATCH CONSULTANCY) ===== */
+.search-section {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
+.modern-search-input {
+  padding: 10px 15px;
+  width: 60%;
+  max-width: 450px;
+  border-radius: 8px;
+  border: 1.5px solid #ddd;
+  font-size: 15px;
+}
+
+.modern-search-input:focus {
+  border-color: #ff6600;
+  box-shadow: 0 0 5px rgba(255, 102, 0, 0.3);
+}
+
+.modern-search-btn {
+  padding: 10px 18px;
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modern-search-btn:hover {
+  background-color: #e05500;
+  transform: scale(1.03);
+}
+
+/* Suggestion Box */
+.modern-suggestion-box {
+  position: absolute;
+  top: 43px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 62%;
+  max-width: 480px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  list-style: none;
+  margin-top: 5px;
+  padding: 0;
+  z-index: 999;
+  overflow-y: auto;
+  max-height: 180px;
+}
+
+/* Scrollbar Styling */
+.modern-suggestion-box::-webkit-scrollbar {
+  width: 6px;
+}
+
+.modern-suggestion-box::-webkit-scrollbar-thumb {
+  background-color: #ff7a00;
+  border-radius: 4px;
+}
+
+.modern-suggestion-box::-webkit-scrollbar-thumb:hover {
+  background-color: #ff9933;
+}
+
+.modern-suggestion-item {
+  padding: 12px 15px;
+  border-bottom: 1px solid #f1f1f1;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modern-suggestion-item:hover {
+  background: #f9f9f9;
+}
+
+.suggestion-type {
+  font-size: 13px;
+  color: #777;
+  margin-left: 8px;
+}
+
+.modern-no-suggestion {
+  padding: 12px;
+  text-align: center;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.no-results {
+  text-align: center;
+  color: #555;
+  margin-top: 20px;
+  font-style: italic;
+}
+
+/* ===========================
+   BLOODBANK ACTION BUTTONS
+=========================== */
+
+.bloodbank-card button {
+  border: none;
+  border-radius: 10px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Add to Cart button */
+.bloodbank-card button:first-child {
+  background: linear-gradient(135deg, #007bff, #00b4ff);
+  color: #fff;
+  box-shadow: 0 6px 14px rgba(0, 123, 255, 0.25);
+}
+
+.bloodbank-card button:first-child:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(0, 123, 255, 0.35);
+}
+
+/* Wishlist button */
+.bloodbank-card button:last-child {
+  background: #fff;
+  color: #ff4d6d;
+  border: 1.5px solid #ff4d6d;
+}
+
+.bloodbank-card button:last-child:hover {
+  background: #ff4d6d;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Button wrapper spacing fix */
+.bloodbank-card > div > div {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
