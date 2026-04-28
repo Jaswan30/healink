@@ -127,10 +127,11 @@ function About() {
           background: "#f5f9ff",
         }}
       >
-        <Counter end={500} label="Patients Helped" icon="🧑‍⚕️" />
-        <Counter end={120} label="Doctors" icon="🩺" />
-        <Counter end={50} label="Hospitals" icon="🏥" />
-        <Counter end={24} label="Support Hours" icon="⏰" />
+        <div style={{ display: "flex", gap: 20, marginTop: 20 }}>
+  <Counter end={500} label="Patients Helped" icon="🧑‍⚕️" />
+  <Counter end={120} label="Doctors" icon="👨‍⚕️" />
+  <Counter end={50} label="Hospitals" icon="🏥" />
+</div>
       </div>
     </section>
   );
