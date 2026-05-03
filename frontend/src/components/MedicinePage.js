@@ -4,7 +4,7 @@ import { useCart } from "../context/Cartcontext";
 import API from "../api";
 
 
-const API_PUBLIC = `${API}/api/public`;
+
 export default function MedicinePage() {
   const [query, setQuery] = useState("");
   const [all, setAll] = useState([]);

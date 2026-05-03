@@ -3,7 +3,7 @@ import "./ConsultancyPage.css";
 import { useCart } from "../context/Cartcontext";
 import API from "../api";
 
-const API_PUBLIC = `${API}/api/public`;
+
 function ConsultancyPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeDropdown, setActiveDropdown] = useState(null);
