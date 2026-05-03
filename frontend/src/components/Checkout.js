@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import "./Checkout.css";
 import { useCart } from "../context/Cartcontext";
-
-const API =
-  (process.env.REACT_APP_API_BASE || "http://localhost:5000/api");
+import API from "../api";
 
 const Checkout = () => {
   const { cartItems, getTotal } = useCart();

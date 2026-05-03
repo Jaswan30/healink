@@ -6,40 +6,33 @@ function Login({ onClose, onLoginSuccess }) {
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (!email || !password) {
-      alert("⚠️ Please fill in all fields");
-      return;
+  try {
+    const API = import.meta.env.VITE_API_URL;
+
+    const res = await fetch(`${API}/api/auth/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      alert("✅ Login successful!");
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("user", JSON.stringify(data.user));
+      onLoginSuccess(data.user);
+      onClose();
+    } else {
+      alert(data.message);
     }
-
-    try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, password }),
-      });
-
-      const data = await res.json();
-      if (res.ok) {
-        alert("✅ Login successful!");
-        
-        // ✅ Save token + user in localStorage
-        localStorage.setItem("token", data.token);
-        localStorage.setItem("user", JSON.stringify(data.user));
-
-        if (data.user) {
-          onLoginSuccess(data.user);
-        }
-        onClose();
-      } else {
-        alert(`❌ ${data.message}`);
-      }
-    } catch (err) {
-      alert("❌ Could not connect to server. Try again.");
-      console.error(err);
-    }
-  };
+  } catch (err) {
+    console.error(err);
+    alert("❌ Could not connect to server");
+  }
+};
 
   return (
     <div className="modal-overlay">

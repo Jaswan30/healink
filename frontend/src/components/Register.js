@@ -7,35 +7,31 @@ function Register({ onClose, onRegisterSuccess }) {
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if (!name || !email || !password) {
-      alert("⚠️ Please fill in all fields");
-      return;
+  try {
+    const API = import.meta.env.VITE_API_URL;
+
+    const res = await fetch(`${API}/api/auth/register`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ name, email, password }),
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+      alert("✅ Registered successfully!");
+      onRegisterSuccess(data.user);
+      onClose();
+    } else {
+      alert(data.message);
     }
-
-    try {
-      const res = await fetch("http://localhost:5000/api/auth/register", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password }),
-      });
-
-      const data = await res.json();
-      if (res.ok) {
-        alert("✅ Registered successfully!");
-        if (data.user) {
-          onRegisterSuccess(data.user);
-        }
-        onClose();
-      } else {
-        alert(`❌ ${data.message}`);
-      }
-    } catch (err) {
-      alert("❌ Could not connect to server. Try again.");
-      console.error(err);
-    }
-  };
+  } catch (err) {
+    console.error(err);
+    alert("❌ Could not connect to server");
+  }
+};
 
   return (
     <div className="modal-overlay">

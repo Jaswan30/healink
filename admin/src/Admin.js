@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./Admin.css";
-
+import API from "../api";
 // Assuming authFetch is a wrapper around fetch that adds the Auth header
 // If it's not defined, we'll use a fallback logic inside the component.
 import { authFetch } from "./lib/api"; 
 
-const BASE_URL = "http://localhost:5000/api";
+const BASE_URL = API;
 
 /* ================= AUTH GUARD ================= */
 
@@ -140,7 +140,7 @@ function Section({ title, endpoint, fields }) {
   formData.append("file", file);
 
   try {
-    await fetch(`http://localhost:5000/api/bulk-upload/${endpoint}`, {
+    await fetch(`${API}/api/bulk-upload/${endpoint}`, {
       method: "POST",
       headers: {
         Authorization: `Bearer ${token}`

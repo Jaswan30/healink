@@ -1,10 +1,10 @@
 import React, { useEffect, useMemo, useState } from "react";
 import "./MedicinePage.css";
 import { useCart } from "../context/Cartcontext";
+import API from "../api";
 
-const API =
-  (process.env.REACT_APP_API_BASE || "http://localhost:5000/api") + "/public";
 
+const API_PUBLIC = `${API}/api/public`;
 export default function MedicinePage() {
   const [query, setQuery] = useState("");
   const [all, setAll] = useState([]);

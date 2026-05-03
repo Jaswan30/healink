@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-
-const API =
-  (process.env.REACT_APP_API_BASE || "http://localhost:5000/api");
+import API from "../api";
 
 const AdminOrders = () => {
   const [orders, setOrders] = useState([]);

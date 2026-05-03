@@ -1,10 +1,9 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import "./BloodBankPage.css";
 import { useCart } from "../context/Cartcontext";
+import API from "../api";
 
-const API =
-  (process.env.REACT_APP_API_BASE || "http://localhost:5000/api") + "/public";
-
+const API_PUBLIC = `${API}/api/public`;
 const BloodBankPage = () => {
   const [search, setSearch] = useState("");
   const [showSuggestions, setShowSuggestions] = useState(false);
@@ -17,7 +16,7 @@ const BloodBankPage = () => {
     let ok = true;
     (async () => {
       try {
-        const res = await fetch(`${API}/blood-centers`);
+        const res = await fetch(`${API_PUBLIC}/blood-centers`);
         const data = await res.json();
         if (ok) setCenters(Array.isArray(data) ? data : []);
       } catch (e) {

@@ -16,7 +16,9 @@ function Subscribe() {
 
   const submit = async () => {
   try {
-    const res = await fetch("http://localhost:5000/api/subscription", {
+    const API = import.meta.env.VITE_API_URL;
+
+fetch(`${API}/api/auth/login`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

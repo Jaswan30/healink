@@ -1,9 +1,9 @@
 // EditProfile.js
 import React, { useEffect, useRef, useState } from "react";
 import "./EditProfile.css";
+import API from "../api";
 
-const API_BASE = (process.env.REACT_APP_API_BASE || "http://localhost:5000/api")
-  .replace(/\/+$/, "");
+const API_BASE = `${API}/api`;
 
 const authHeader = () => {
   const t = localStorage.getItem("token");

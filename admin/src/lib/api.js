@@ -1,8 +1,8 @@
 // admin/src/lib/api.js
-const RAW_BASE =
-  (process.env.REACT_APP_API_BASE || "http://localhost:5000/api").trim();
+const API = import.meta.env.VITE_API_URL;
 
-export const API_BASE = RAW_BASE.replace(/\/+$/, "");
+export default API;
+export const API_BASE = API.replace(/\/+$/, "");
 
 export function buildUrl(path) {
   const p = path.startsWith("/") ? path : `/${path}`;

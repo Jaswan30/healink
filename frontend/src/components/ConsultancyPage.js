@@ -1,10 +1,9 @@
 import React, { useEffect, useMemo, useState } from "react";
 import "./ConsultancyPage.css";
 import { useCart } from "../context/Cartcontext";
+import API from "../api";
 
-const API =
-  (process.env.REACT_APP_API_BASE || "http://localhost:5000/api") + "/public";
-
+const API_PUBLIC = `${API}/api/public`;
 function ConsultancyPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeDropdown, setActiveDropdown] = useState(null);
